@@ -1,0 +1,85 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'styles/Statistic.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+    <header><h3>Placements</h3></header>
+    <section id="statistic" class="statistic-section one-page-section">
+        <div class="bg-layer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-12 col-md-4">
+                    <div class="counter">
+                        <i class="fa fa-money fa-2x stats-icon"></i>
+                        <span style="display: flex;text-align: center;"><h2 class="timer count-title count-number">52.63</h2><h2>Lakhs</h2></span>
+                        <div class="stats-line-black"></div>
+                        <p class="stats-text">Highest Package Offered</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="counter">
+                        <i class="fa fa-building fa-2x stats-icon"></i>
+                        <span style="display: flex;margin-left: 120px;"><h2 class="timer count-title count-number">400</h2><h2>+</h2></span>
+                        <div class="stats-line-black"></div>
+                        <p class="stats-text">Total Number Of Companies Visited </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="counter">
+                        <i class="fa fa-laptop fa-2x stats-icon"></i>
+                        <span style="display: flex;left:10%;margin-left: 110px;"><h2 class="timer count-title count-number">1000</h2><h2>+</h2></span>
+                        <div class="stats-line-black"></div>
+                        <p class="stats-text">Placements</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script>
+        
+        $(document).ready(function($) {
+            $('.count-number').counterUp({
+                delay:10,
+                time: 1000
+            });
+        });
+           // Function to reload the page
+        function reloadPage() {
+        window.location.reload();
+        }
+        
+        // Set interval to reload the page every 5 seconds (adjust as needed)
+        const reloadInterval = setInterval(reloadPage, 5000);
+        
+        // Get the element to stop auto reload on hover
+        const reloadTrigger = document.getElementById('reload');
+        
+        // Add event listeners for mouseover and mouseout events
+        reloadTrigger.addEventListener('mouseover', function() {
+            // Clear the reload interval when mouse hovers over the element
+            clearInterval(reloadInterval);
+        });
+        
+        reloadTrigger.addEventListener('mouseout', function() {
+            // Restart the reload interval when mouse leaves the element
+            reloadInterval = setInterval(reloadPage, 5000);
+        });
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/portal.css' %}" />
+<style>
+    main{
+        background-image: url("{% static 'images/bg.jpg' %}");
+        background-repeat: repeat-x;
+        animation: slideleft 20000s infinite linear;
+        /* -webkit-animation: slideleft 20000s infinite linear; */
+        background-size: cover;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-attachment: fixed;
+        position: relative;
+        min-height: 100vh;
+        
+    }  
+</style>
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="bglayer">
+    <div class="quiz-app" style="justify-content: center;align-items: center;">
+    <p style="color:grey;padding-left: 22%;font-size:larger;color:red;font-weight: bolder;">Biometric authentication was unsuccessful</p><br/>
+    <i style="color:grey;padding-left: 40%;font-size:larger">Try to login again...</i><br/><br/>
+    <button class="submit-button" style="font-size:larger;margin-top: 3%;"><a href="http://127.0.0.1:8000/administrator" style="text-decoration:none;color:white;">Login</a></button>
+    <button class="submit-button" style="font-size:larger;margin-top: 3%;"><a href="http://127.0.0.1:8000/" style="text-decoration:none;color:white;">Home</a></button>
+    </div>
+  <script src="index.js"></script>
+  </div>
+</main>
+{% endblock %}

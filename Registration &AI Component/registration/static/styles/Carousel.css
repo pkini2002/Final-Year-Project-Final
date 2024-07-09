@@ -1,0 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@0,200;0,300;0,400;1,100&display=swap'); 
+html,
+body {
+  padding-top: 50px;
+  position: relative;
+  height: 100%;
+}
+
+header{
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-weight: 700;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin-top: 100px;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}

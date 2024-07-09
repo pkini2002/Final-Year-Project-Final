@@ -1,0 +1,57 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/HallTicket.css' %}" />
+
+<style>
+    main{
+    background-image: url("{% static 'images/bg.jpg' %}");
+    background-repeat: repeat-x;
+    animation: slideleft 20000s infinite linear;
+    /* -webkit-animation: slideleft 20000s infinite linear; */
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="bglayer">
+        <div class="form-container">
+            <form method="POST" id="hallTicketForm" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <div class="shadow-container" style="position: relative;left: 150px;">
+                    <div class="container horizontal">
+                        <div class="title-item">
+                            <div class="title-label">Hall Ticket Generator</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <!-- input form -->
+                        <div class="form-content">
+                            <div class="input-group">
+                                <!-- application no is required to generate hall ticket -->
+                                <input type="text" id="rollNumberField" class="form-control" required placeholder="Enter your application number" name="application-number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="next-button">Generate & Print Hall Ticket</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+{% endblock %}

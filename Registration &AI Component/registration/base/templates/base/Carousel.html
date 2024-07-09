@@ -1,0 +1,46 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+ <!-- Link Swiper's CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <link rel="stylesheet" href="{% static 'styles/Carousel.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{% static 'images/home-award-2.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-4a.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-6.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-7.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-2.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-4a.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-6.png' %}" alt="" /></div>
+      <div class="swiper-slide"><img src="{% static 'images/home-award-7.png' %}" alt="" /></div>
+
+      
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        autoplay: {
+             delay: 2500,
+             disableOnInteraction: false,
+          },
+      });
+    </script>
+
+{% endblock %}

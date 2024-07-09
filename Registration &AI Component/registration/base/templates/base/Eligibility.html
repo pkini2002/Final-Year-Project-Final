@@ -1,0 +1,28 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/Eligibility.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+    <div class="eligibility">
+        <h2 style="padding: 50px;">Eligibility Criteria</h2>
+        <p>The admission to BTech programme will be under General Category (Candidates who have passed Class 12 in India) and the NRI category.</p>
+        <p>The eligibility category for the General Category students is as follows</p>
+        <ul style="list-style-type: circle;line-height: 25px;font-weight:600;margin-left: 50px;margin-bottom: 50px;padding:0 100px 0 100px;" class="scope">
+            <li>Candidates must have passed or are attempting the Class 12 or equivalent examination in India.<br></li>
+            <li>Candidates should have studied Mathematics and Physics as compulsory subjects. One subject from Chemistry, Biology, Computer Science, Electronics, or Information Technology. The candidates should have English as one of the languages of study in Class 12.<br></li>
+            <li>The candidate should have scored 45% marks (40% for reserved category) aggregate in Mathematics, Physics, and any one of the optional subjects mentioned above, in Class 12.<br></li>
+            <li>The applicant must be at least 17 years old as of December 31 of the admissions year.</li>
+        </ul>
+        <p>NRI category includes Foreign Nationals or Persons of Indian Origin (Candidates who have completed Class 12 outside of India or Candidates sponsored by parents or blood relatives who have NRI status or Overseas Citizens of India) The admission for the NRI category is based on inter-se merit, taking into account the marks earned in PCM courses in Class 12.</p>
+    </div>
+    <a href="https://nitte.edu.in/fee/BTECH.pdf" style="text-decoration: none;color: aliceblue;background-color: brown;padding:20px 200px 20px 200px;border-radius: 100px;margin-left: 35%;margin-top: 30px;font-size: larger;font-weight: 700;" target="_blank">Fee Structure</a>
+</body>
+
+{% endblock %}

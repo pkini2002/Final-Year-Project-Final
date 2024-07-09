@@ -1,0 +1,24 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/Civil.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Civil Engineering</h2>
+            <p>The Civil Engineering Department started in 1987 with a UG Programme with an intake of 60. Annual Intake has been increased to 120 since the academic year 2012-13. Two year Post Graduation programme M.Tech in Construction Technology was started in 2010 with an intake of 18 and M.Tech in Structural Engineering in the year 2017 with an intake of 24. The Department is also recognized as a Research Centre offering M.Sc. (Engg.) and Ph.D. programmes with 9 research scholars pursuing their Ph. D. In addition, the Department Students' Association (OCEAN) organizes seminars, workshops, educational tours and design competitions for Civil Engineering students. It also conducts Leadership Training, Personality Development Training and Entrepreneurship Development Programmes. The Department has taken up Karnataka State Council for Science & Technology (KSCST) funded projects and is also working on developing Masonry blocks and Paver blocks using Industrial waste materials under Karnataka New Age Incubation Centre, NMAMIT funded by the Department of IT, BT and S & T, government of Karnataka.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

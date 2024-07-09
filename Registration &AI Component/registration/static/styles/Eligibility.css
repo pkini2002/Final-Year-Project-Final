@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@0,200;0,300;0,400;1,100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.eligibility{
+    margin-bottom: 100px;
+}
+p {
+    font-weight: 600;
+    line-height: 25px;
+    margin: 0 100px 30px 100px;
+
+}

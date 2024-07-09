@@ -1,0 +1,26 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/CCE.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Computer and Communication Engineering</h2>
+            <p>Bachelor of Technology in Computer & Communication Engineering is designed to provide expertise to those students who seek specialization in Computer Communication Technologies and Telecommunications. The main focus of the programme is on Computer Networks (Wired and Wireless) and Telecommunications technologies. The program offers courses in Computer Science, Cloud Computing, Multimedia Communications and Big Data Analytics. Emphasis is placed throughout the course on developing the practical skills and in-depth knowledge required by the present industrial scenario. This program equips students to engage in research focusing on the fusion of multi-disciplinary skills employed in designing modern computing devices with communication channels, communication systems with advanced computer algorithms and systems.
+            <br><br>
+            The program provides experiential learning on basic and advanced courses in computer science, communication networks, security and associated subjects.It is a professional degree that integrates communication techniques, problem-solving strategies, simulation skills and mathematical foundations with the hands-on training required to solve real-world problems.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

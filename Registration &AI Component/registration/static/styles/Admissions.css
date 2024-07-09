@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@0,200;0,300;0,400;1,100&display=swap');
+
+body, html{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
+body{
+   
+    overflow: scroll;
+    overflow-x: hidden;
+  background: white
+}
+
+::-webkit-scrollbar {
+    width: 5px;  
+    background: transparent;  
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2e48cc;
+}
+
+
+.navbar {
+  font-size: 15px;
+    margin-left: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    top:0;
+    background-color: #fff;
+    opacity: 75%;
+    box-shadow: 3px 3px 6px rgba(0,0,0.1);
+    z-index: 1000;
+
+}
+
+.navbar ul{
+  font-size: 15px;
+    width:100%;
+    list-style:none;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    top:0;
+}
+.navbar li{
+    height:50px;
+
+
+}
+.navbar a{
+  font-size: 15px;
+    float:left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #2e48cc;
+    margin-right: 20px;
+}
+
+.navbar a:hover, .navbar a.active{
+    background: #ddd;
+    color: rgb(39, 8, 165);
+  }
+
+.navbar li:first-child{
+    margin-right: auto;
+}
+
+div {
+  height:50px;
+  width:50px;
+  box-sizing:border-box;
+}
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+
+#cube{
+    margin-top:300px;
+    margin-left: 700px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  height:100px;
+  width:100px;
+  transform-style:preserve-3d;
+  transform-origin:center center;
+  transform:rotateY(-20deg) rotateX(50deg) rotatez(0deg);
+  animation-iteration-count:infinite;
+  animation-duration:3s;
+  animation-timing-function:linear;
+
+}
+#cube>div{
+  position:absolute;
+  border:5px solid #2e48cc;
+}
+
+#logo{
+    align-items: center;
+    margin-left:500px;
+}
+
+#myDiv  {
+height:100%;
+width:100%;
+box-sizing:border-box;
+}
+#back {
+  transform-origin:top;
+  transform:rotateX(90deg) ;
+  background:white;
+  animation: back 1.5s cubic-bezier(0.8,0.2, 0.2, 0.8) infinite alternate;
+}
+
+#right{
+  transform-origin:right;
+  transform: rotateY(90deg) rotateX(0deg) ;
+  background: linear-gradient(-135deg, #fff 0%,#fff 100%);
+  animation: right 1.5s cubic-bezier(0.8,0.2,0.2,0.8) infinite alternate;
+}
+
+#left{
+  background:white;
+  transform-origin: left;
+  transform: rotateY(-90deg);
+  animation: left 1.5s cubic-bezier(0.8,0.2,0.2,0.8) infinite alternate;
+}
+
+#top{
+  transform:translatez(50px);
+  background: linear-gradient(135deg, #fff 0%,#fff 100%);
+  animation: top 1.5s cubic-bezier(0.8,0.2,0.2,0.8) infinite alternate;
+}  
+
+#bottom {
+  background:white;
+  transform-origin:top;
+  transform: translatez(0px) rotateY(0deg) rotateX(0deg);
+  animation: bottom 1.5s cubic-bezier(0.8,0.2,0.2,0.8) infinite alternate;
+}
+
+#front{
+  transform-origin:bottom;
+  transform:translatez(00px) rotatex(-90deg);
+  background: linear-gradient(-135deg, #fff 0%,#fff 100%);
+  animation: front 1.5s cubic-bezier(0.8,0.2,0.2,0.8) infinite alternate;
+}
+
+
+
+#d1{animation-delay:0.2s;}
+#d2{animation-delay:0.4s;}
+#d3{animation-delay:0.6s;}
+@keyframes top{
+  100%{
+  border:0px solid white;
+  transform: translatez(80px);
+  }
+}
+
+@keyframes front{
+  100%{
+    border:0px solid white;
+    transform:translatey(30px) rotatex(-90deg);
+  }
+}
+@keyframes right{
+  100%{    
+    border:0px solid white;
+    transform: rotateY(90deg) translatez(30px);
+  }
+}
+
+@keyframes back{
+  100%{
+    border:0px solid white;
+    transform: rotateX(90deg) translateZ(30px);
+  }
+}
+
+@keyframes left{
+  100%{
+    border:0px solid transparent;
+    transform: rotateY(-90deg) translatez(30px);
+  }
+}
+
+@keyframes bottom {
+  100%{
+    border:5px solid white;
+    transform:translatez(-30px);
+  }
+}
+
+@keyframes dots{
+  50%{color:transparent}
+  100%{color:transparent}
+}

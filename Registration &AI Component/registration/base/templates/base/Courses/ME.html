@@ -1,0 +1,22 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/ME.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Mechanical Engineering</h2>
+            <p>The Department of Mechanical Engineering started in 1986 with an intake of 40 students, today has an intake of 120. The Department offers an Undergraduate programme, BTech in Mechanical Engineering and one Postgraduate programe - M.Tech. Machine Design with an intake of 18 students. With excellent infrastructural facilities in terms of class rooms and laboratories, the faculty are engaged in research activities and sponsored research projects worth more than Rs. 90 Lakhs are already executed. A research project of Rs. 77.28 Lakhs is in progress in Micromachining area with 50% fund sharing by Karnataka Council for Technological Upgradation, Government of Karnataka. The department has excellent research outputs in terms of publications in refereed International Journals and National and International Conferences. The faculty members have been continuously updating their technical expertise and knowledge by attending/organizing seminars, conferences and workshops. Many faculty have won several awards and sponsorships for attending and conducting seminars and conferences. Students are exposed and trained in facilities like Automotive Learning factory, Fronius Welding Simulation, Industrial version CNC machine etc.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+{% endblock %}

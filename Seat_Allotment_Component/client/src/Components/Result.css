@@ -1,0 +1,50 @@
+
+/* @import url('../assets/image7.png'); */
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/image8.png');
+    background-size: cover ;
+    /* overflow: hidden; Hide overflowing gradient */
+    /* position: relative; Position the container relative for absolute positioning */
+}
+
+.result-form {
+    position: relative;
+    z-index: 1; /* Ensure the form is above the gradient */
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white; /* Set form background color to white */
+}
+
+.result-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.result-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.result-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.result-form button:hover {
+    background-color: black;
+    color: white;
+}

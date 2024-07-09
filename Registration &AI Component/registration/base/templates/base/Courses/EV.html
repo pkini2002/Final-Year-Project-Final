@@ -1,0 +1,28 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/EV.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Artificial Intelligence and Data Science (AI & DS)</h2>
+            <p>Post-COVID global semiconductor market has grown exponentially with $590 billion in 2021 and also expected to grow to $1 Trillon by 2030. The driving force of this tremendous growth is the technologies such as Artificial Intelligence(AI), Electric Vehicle (EV), 5G,Internet of Things (IoT), Health Care etc. Realization of these technologies, depend on the production of silicon chip for the hardware required. Many chip-making industries in R&D, design, manufacturing, testing, etc. are established to fill the gap in the chip supply chain. Government of India announced semiconductor scheme with an outlay of Rs 76,000 crore in December 2021 to fulfil Aatma Nirbhar Bharath to contribute significantly to the global semiconductor market. Various initiatives are taken in industries, business and academics to ensure robust and sustainable semiconductor ecosystem in India
+            <br><br>
+                Bachelor of Technology in Electronics Engineering (VLSI Design and Technology) is the specialization of B.Tech in Electronics and Communication Engineering. VLSI is the process of design and manufacturing of Integrated Circuits (IC) or silicon chips. This programme aims to cater to the exponential rise in demand for semiconductor talent pool in India and across the globe. It prepares market-ready engineers in the field of semiconductor technology and electronics industries.
+                <br><br>   
+                As India focuses on becoming a chip-making nation, the All India Council for Technical Education (AICTE) has also designed a curriculum for B.Tech in Electronics (VLSI Design and Technology). Our course is structured in line with the AICTE model curriculum and covers a range of topics from semiconductor device fundamentals, analog and digital circuits to VLSI circuits and design, IC design and technology, semiconductor equipment operation, manufacturing, assembly, testing and packaging, microcontrollers, embedded systems. It also includes study and usage of Electronic Design Automation (EDA) tools and the programming, scripting languages for semiconductor design, synthesis, simulation, fabrication and testing.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

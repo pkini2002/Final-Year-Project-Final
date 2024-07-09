@@ -1,0 +1,36 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/portal.css' %}" />
+<style>
+    main{
+        background-image: url("{% static 'images/bg.jpg' %}");
+        background-repeat: repeat-x;
+        animation: slideleft 20000s infinite linear;
+        /* -webkit-animation: slideleft 20000s infinite linear; */
+        background-size: cover;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-attachment: fixed;
+        position: relative;
+        min-height: 100vh;
+        
+    }  
+</style>
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="bglayer">
+    <div class="quiz-app" style="justify-content: center;align-items: center;">
+    <i style="color:grey;padding-left: 32%;padding-top: 20%;font-size:larger">The test will be held on April 15th</i><br/>
+    <i style="color:grey;padding-left: 40%;font-size:larger">9:00AM: 90 minutes</i><br/><br/>
+    <p style="padding-left: 33%;font-size:larger">You can take mock test now</p><br/>
+    <button class="submit-button"style="font-size:larger;margin-top: 3%;"><a  href={% url 'examPortalQues' %} style="text-decoration:none;color:white;" >Mock test</a></button>
+    </div>
+  <script src="index.js"></script>
+  </div>
+</main>
+{% endblock %}

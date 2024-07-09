@@ -1,0 +1,213 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+ <!-- Link Swiper's CSS -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ <link href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" rel="stylesheet">
+
+ <link rel="stylesheet" href="{% static 'styles/CourseCard.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+    <header><h1>B-TECH Programs</h1></header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          
+          <div class="courses_card transition-card">
+          <img src="{% static 'images/AIDS.png' %}" alt="card-1" target="_blank" />
+            <div class="courses_card-modal card__modal-1">
+               <a href="../Courses/AIDS.html"><h4>Artificial Intelligence & Data Science</h4>
+               </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/AIML.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/AIML.html"> <h4>Artificial Intelligence & Machine Learning</h4></a> 
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Biotechnology Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/BIO.html">  <h4>Biotechnology</h4></a> 
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Civil Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/Civil.html"> <h4>Civil Engineering</h4></a>  
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Computer & Communication Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/CCE.html"> <h4>Computer & Communication Engineering</h4></a>  
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Computer Science & Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/CSE.html"> <h4>Computer Science & Engineering</h4></a>  
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Computer Science (Full Stack Development Specialization).png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/CSF.html"><h4>Computer Science (Full Stack Development)</h4></a>   
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Computer Science (Cyber Security).png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/CSC.html"><h4>Computer Science (Cyber Security)</h4></a>   
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Electrical & Electronics Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/EE.html"><h4>Electrical & Electronics Engineering</h4></a>   
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Electronics & Communication Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/EC.html"><h4>Electronics & Communication Engineering</h4></a>   
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/EC.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/EE.html"><h4>Electronics (VLSI Design & Technology)</h4></a>   
+             
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/EC.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/EC.html"><h4>Electronics & Communication Engineering(ACT)</h4>
+                </a>   
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img   src="{% static 'images/Information Science & Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/IS.html"> <h4>Information Science & Engineering</h4>
+                </a>  
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Mechanical Engineering.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/ME.html"> <h4>Mechanical Engineering</h4>
+                </a>  
+                </div>
+              </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="courses_card transition-card">
+              <img src="{% static 'images/Robotics & Artificial Intelligence.png' %}" alt="card-1" target="_blank" />
+                <div class="courses_card-modal card__modal-1">
+                <a href="../Courses/RA.html"><h4>Robotics & Artificial Intelligence</h4>
+              </a>  
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <header><h1>FAQ's</h1></header>
+    <div class="faq">
+      <a href="#" class="togglefaq"><i class="icon-plus"></i> How to register?</a>
+      <div class="faqanswer">
+        <p style="padding-bottom: 30px;">Click on Admissions->apply now and then register
+</div>
+
+   <a href="#" class="togglefaq"><i class="icon-plus"></i> What is the process for admission?</a>
+      <div class="faqanswer">
+        <p style="padding-bottom: 30px;">Register->Nucat Exam->Branch Allotment->Fees Payment
+</p>
+</div>
+
+    <a href="#" class="togglefaq"><i class="icon-plus"></i> What if we do not get preferred seat?</a>
+      <div class="faqanswer">
+        <p style="padding-bottom: 30px;">You get another chance to change branch. 
+</p>
+</div>    
+
+       <a href="#" class="togglefaq"><i class="icon-plus"></i> When is the exam?</a>
+      <div class="faqanswer">
+         <p style="padding-bottom: 30px;">You can click on Admissions on the navbar and check dates and other updates about admission
+</p>
+</div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 50,
+        freeMode: true,
+       
+        autoplay: {
+         delay: 2500,
+         disableOnInteraction: false,
+      },
+      });
+      //faq toggle stuff 
+        $('.togglefaq').click(function(e) {
+            e.preventDefault();
+            var notthis = $('.active').not(this);
+            notthis.find('.icon-minus').addClass('icon-plus').removeClass('icon-minus');
+            notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
+            $(this).toggleClass('active').next().slideToggle("fast");
+            $(this).children('i').toggleClass('icon-plus icon-minus');
+        });
+    </script>
+  </body>
+
+{% endblock %}

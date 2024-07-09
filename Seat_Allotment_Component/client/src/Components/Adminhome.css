@@ -1,0 +1,32 @@
+.admin-home {
+  text-align: center;
+  background-image: url('../assets/image1.png'); /* Path to your image file */
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-message {
+  margin-top: 700px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}

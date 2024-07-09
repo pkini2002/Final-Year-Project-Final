@@ -1,0 +1,56 @@
+/* .body {
+    background-image: url('../assets/image8.png');
+    background-size: cover;
+} */
+
+.adminlogin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    background-image: url('../assets/adminlogin.png');
+    background-size: cover;
+    /* background: linear-gradient(to right, #b1f5fa, #037f92); */
+    overflow: hidden;
+    /*Hide overflowing gradient*/
+    /* animation: waveAnimation 10s infinite linear; */
+}
+
+
+    .adminlogin-container .adminlogin-form {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        /* Set form background color to white */
+    }
+
+    .adminlogin-container .adminlogin-form label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .adminlogin-container .adminlogin-form input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    .adminlogin-container .adminlogin-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .adminlogin-container .adminlogin-form button:hover {
+        background-color: black;
+        color: white;
+    }

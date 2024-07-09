@@ -1,0 +1,27 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/AIDS.css' %}" />
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+        </div> 
+        <h2>Artificial Intelligence and Data Science (AI & DS)</h2>
+        <p>Bachelor of Technology in Artificial Intelligence and Data Science (AI & DS), is an engineering program started in the academic year 2022–23 under Nitte Deemed to be University, aiming to create experts in the domain of data science. It enables the students to acquire technical skills to perform data processing, analysis and visualization in real-time applications from various domains. The courses studied in this program relate with methodologies, processes, techniques and tools drawn from various domains of computing and information science to extract knowledge from structured and unstructured data.
+        <br><br>
+        The concepts studied in AI & DS cover the applications of mathematical concepts for data handling, study of various methods followed for data handling and analysis, applications of data analysis in the domain of artificial intelligence.
+        <br><br>      
+        The knowledge acquired could be applied in designing the software systems facilitating intelligent decisions in business applications. It is a specialized branch that deals with the development of data-driven solutions, data visualization tools and techniques to analyze big data. It also incorporates the concepts of machine learning and deep learning model building for solving various computational and real-world problems.</p>
+    </div>
+    <a href="{% url 'registration' %}">
+        <button type="button">REGISTER NOW</button>
+    </a>
+
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%; height: 435px; z-index: 1000; border: 0;" scrolling="no"></iframe>
+
+</body>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Registry Interface</title>
+    <style>
+        .applications-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.applications-table th, .applications-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.applications-table th {
+    background-color: #f2f2f2;
+}
+#submit-btn {
+  background: -webkit-linear-gradient(right, #371adc, #0206f4);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #371adc;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin:50px 50%;
+  
+  transition: 0.25s;
+  width: 153px;
+}
+
+
+ </style>
+</head>
+<body>
+
+    
+
+    <!-- Placeholder for displaying applications -->
+    <div id="applicationsTable"></div>
+
+    <!-- Script to include Web3.js and your JavaScript code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.5.2/web3.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        getAllApplications();
+    </script>
+</body>
+</html>

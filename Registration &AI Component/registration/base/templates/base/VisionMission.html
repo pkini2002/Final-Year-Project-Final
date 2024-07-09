@@ -1,0 +1,33 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/About.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="about-section">
+        <div class="inner-container">
+            <h3>Vision</h3>
+            <p class="text">
+                Pursuing Excellence, Empowering people, Partnering in Community Development
+            </p>
+            <h3>Mission</h3>
+            <p class="text">
+                To develop NMAM Institute of Technology, Nitte, as Center of Excellence by imparting Quality Education to generate Competent, Skilled and Humane Manpower to face emerging Scientific, Technological, Managerial and Social Challenges with Credibility, Integrity, Ethics and Social Concern
+            </p>
+            <h3>Core Values</h3>
+            <p class="text">
+                Ethics, Team work, Honesty, Loyalty, Professional & Personal Integrity
+            </p>
+            <div class="explore"><a href="{% url 'registration' %}" target="_blank">
+                <span style="border: 2px solid #2E3192;border-radius: 20%;color: white;background-color: #2E3192; padding:5px 20px 5px 20px;">Register Now</span></a>
+            </div> <br><br><br><br>
+            <br><br><br><br><br>
+           
+        </div>
+    </div>
+</body>
+
+{% endblock %}

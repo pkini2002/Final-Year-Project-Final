@@ -1,0 +1,26 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/EC.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Electronics and Communication Engineering</h2>
+            <p>The Department has highly qualified and experienced faculty. The Curricula is designed with focus on the fundamentals enabling the students to undergo Experiential, Interactive, Collaborative, Computer based and Active learning to prepare them to be independent Life-long learners.
+            <br><br>
+                The Department is equipped with state-of-the art laboratory facilities in the areas of Communication, Embedded Systems, Power Electronics, Signal Processing, VLSI Design and Automotive Electronics to equip students to be industry ready. The Department showcases a Center of Excellence funded by Texas Instruments, in association with STEPS Knowledge Services Pvt. Ltd., authorized Partner for Texas Instruments University Program in the thrust areas of Embedded Systems, IoT and Robotics. The Department is recognized as a Nodal center for Virtual Laboratory by MHRD.The Department has collaborated with ISSS in the MEMS Community chip activity and our students have involved in IC fabrication. Student forums like IEEE, ISTE and IEI chapters, Robotics, Aero, IoT, Medical Electronics and Embedded Systems clubs provide opportunities for students to develop technical and soft skills. The Department also has active MoUs with Industries, Universities and Government Organizations. Graduates from the department are placed in major industries, civil services and multinational corporations.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

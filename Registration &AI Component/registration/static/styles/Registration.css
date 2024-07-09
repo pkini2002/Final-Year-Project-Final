@@ -1,0 +1,134 @@
+::-webkit-scrollbar {
+    width: 5px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #2e48cc;
+}
+
+.bglayer {
+    background: rgba(9, 7, 18, 0.7);
+    min-height: 150vh;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  
+  /* Container Styles */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    position: relative;
+    top: 40px;
+  }
+
+
+  .form-content {
+    /* margin-top: 30px; */
+    width: 800px; /* Adjust this width as needed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:0 20px;
+    position: relative;
+    bottom: 60px;
+  }
+
+  .title-label{
+      margin-top: 70%;
+  }
+
+  .shadow-container {
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    opacity: 0.8;
+  }
+  
+  .container.horizontal {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 70px;
+  }
+  
+  .title-item {
+    margin-left:46%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #082ab4;
+  }
+
+  .radio-group {
+    display: flex;
+  }
+  
+  .radio-label {
+    padding-top:10px ;
+    display: flex;
+    padding-right: 50px;
+    font-weight: normal;
+  }
+  .radio-label input[type="radio"] {
+    margin-top: 1px; /* Adjust spacing between radio button and label */
+  }
+  .content {
+    margin-top: 20px;
+  }
+  
+  .form-content {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 0px;
+    display: block;
+    margin-left: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 90%;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .next-button {
+    margin-left: 46%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #082ab4;
+    background-color: #fff;
+    cursor: pointer;
+    color: #082ab4;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .next-button:hover {
+    background-color: #082ab4;
+    color: #fff;
+  }
+  

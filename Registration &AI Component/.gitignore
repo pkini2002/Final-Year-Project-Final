@@ -1,0 +1,9 @@
+venv/
+.venv
+registration/db.sqlite3
+registration/registration/__pycache__/
+registration/base/migrations/__pycache__/
+registration/base/migrations
+registration/base/__pycache__/
+__pycache__
+registration/media/

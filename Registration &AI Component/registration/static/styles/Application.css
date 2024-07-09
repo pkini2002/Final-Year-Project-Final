@@ -1,0 +1,225 @@
+.bglayer {
+    background: rgba(9, 7, 18, 0.7);
+    min-height: 100vh;
+	
+}
+
+.animation-ctn{
+  text-align:center;
+  margin-top:5em;
+}
+
+	@-webkit-keyframes checkmark {
+    0% {
+        stroke-dashoffset: 100px
+    }
+
+    100% {
+        stroke-dashoffset: 200px
+    }
+}
+
+@-ms-keyframes checkmark {
+    0% {
+        stroke-dashoffset: 100px
+    }
+
+    100% {
+        stroke-dashoffset: 200px
+    }
+}
+
+@keyframes checkmark {
+    0% {
+        stroke-dashoffset: 100px
+    }
+
+    100% {
+        stroke-dashoffset: 0px
+    }
+}
+
+@-webkit-keyframes checkmark-circle {
+    0% {
+        stroke-dashoffset: 480px
+   
+    }
+
+    100% {
+        stroke-dashoffset: 960px;
+      
+    }
+}
+
+@-ms-keyframes checkmark-circle {
+    0% {
+        stroke-dashoffset: 240px
+    }
+
+    100% {
+        stroke-dashoffset: 480px
+    }
+}
+
+@keyframes checkmark-circle {
+    0% {
+        stroke-dashoffset: 480px 
+    }
+
+    100% {
+        stroke-dashoffset: 960px
+    }
+}
+
+@keyframes colored-circle { 
+    0% {
+        opacity:0
+    }
+
+    100% {
+        opacity:100
+    }
+}
+
+/* other styles */
+/* .svg svg {
+    display: none
+}
+ */
+.inlinesvg .svg svg {
+    display: inline
+}
+
+/* .svg img {
+    display: none
+} */
+
+.icon--order-success svg polyline {
+    -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards;
+    animation: checkmark 0.25s ease-in-out 0.7s backwards
+}
+
+.icon--order-success svg circle {
+    -webkit-animation: checkmark-circle 0.6s ease-in-out backwards;
+    animation: checkmark-circle 0.6s ease-in-out backwards;
+}
+.icon--order-success svg circle#colored {
+    -webkit-animation: colored-circle 0.6s ease-in-out 0.7s backwards;
+    animation: colored-circle 0.6s ease-in-out 0.7s backwards;
+} 
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Container Styles */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width:100%;
+    margin-left: 0;
+  }
+
+  .shadow-container {
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    opacity: 0.8;
+  }
+  
+  .container.horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .title-item {
+    margin-left:200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #082ab4;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .radio-label {
+    display: flex;
+    padding: 0%;
+    font-weight: normal;
+  }
+
+  .content {
+    margin-top: 0px;
+  }
+  
+  .form-content {
+    margin-bottom: 10px;
+  }
+  
+  .input-group {
+    margin-bottom: 0px;
+  }
+  
+
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 90%;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .next-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #082ab4;
+    background-color: #fff;
+    cursor: pointer;
+    color: #082ab4;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .next-button:hover {
+    background-color: #082ab4;
+    color: #fff;
+  }
+        .Mystar
+        {
+            color: Red;
+        }
+        .card
+        {
+            box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2);
+            width: 650px;
+            margin: auto;
+            text-align: left;
+            border: 2px solid;
+        }
+    
+     
+        .title
+        {
+            color: grey;
+            font-size: 18px;
+        }

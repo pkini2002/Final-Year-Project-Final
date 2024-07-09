@@ -1,0 +1,239 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/portal.css' %}" />
+<style>
+    main{
+        background-image: url("{% static 'images/bg.jpg' %}");
+        background-repeat: repeat-x;
+        animation: slideleft 20000s infinite linear;
+        /* -webkit-animation: slideleft 20000s infinite linear; */
+        background-size: cover;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        background-attachment: fixed;
+        position: relative;
+        min-height: 100vh;
+        
+    }  
+    .quiz-app {
+      background-color: #fff;
+      border: 10px solid #f6f6f6;
+      margin: auto;
+      margin-top: 40px;}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="bglayer">
+      <div class="marginquiz">
+    <div class="quiz-app">
+      <div class="quiz-info">
+        <div class="category">Category: <span></span></div>
+        <div class="count">Questions Count: <span></span></div>
+      </div>
+      <div class="quiz-area">
+        
+      </div>
+      <div class="options-area">
+  
+      </div>
+      <button class="submit-button">Submit Answer</button>
+      <div class="bullets">
+        <div class="spans"></div>
+        <div class="countdown"></div>
+      </div>
+      <div class="results">
+          
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+  </div>
+</main>
+<script>
+let quizInfo = document.querySelector(".quiz-info")
+let countSpan = document.querySelector(".count span")
+let bullets = document.querySelector(".bullets")
+let categorySpan = document.querySelector(".category span")
+let bulletsSpanContainer = document.querySelector(".bullets .spans")
+let quizArea = document.querySelector(".quiz-area")
+let optionsArea = document.querySelector(".options-area")
+let submitButton = document.querySelector(".submit-button")
+let countdownDiv = document.querySelector(".countdown")
+let resultsDiv = document.querySelector(".results")
+
+let currentIndex = 0
+let rigthAnswers = 0
+let countdownInterval = 0
+
+function getQuestions() {
+  let myRequest = new XMLHttpRequest()
+
+  myRequest.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let questionsObject = JSON.parse(this.responseText)
+      let questionsCount = questionsObject.questions.length
+
+      createBullets(questionsCount)
+
+      categoryName(questionsObject.questions[currentIndex].category, questionsCount)
+
+      addQuestionData(questionsObject.questions[currentIndex], questionsCount)
+
+      countdown(600, questionsCount)
+
+      submitButton.onclick = () => {
+        let theRightAnswer = questionsObject.questions[currentIndex].right_answer
+        currentIndex++
+
+        checkAnswer(theRightAnswer, questionsCount)
+
+        quizArea.innerHTML = ""
+        optionsArea.innerHTML = ""
+
+        addQuestionData(questionsObject.questions[currentIndex], questionsCount)
+
+        handleBullets()
+
+        showResults(questionsCount)
+
+      }
+    }
+  };
+
+  myRequest.open("GET", "https://mohamedkhalifa11.github.io/Qweb/webDevlopement_questions.json", true)
+  myRequest.send()
+}
+
+getQuestions(); 
+
+function createBullets(num) {
+  countSpan.innerHTML = num
+
+  for (let i = 0; i < num; i++) {
+    let theBullet = document.createElement("span");
+
+    if (i === 0) {
+      theBullet.className = "on"
+    }
+
+    bulletsSpanContainer.appendChild(theBullet)
+  }
+}
+
+
+function categoryName(category) {
+  categorySpan.innerHTML = category
+}
+
+
+function addQuestionData(obj, count) {
+  if (currentIndex < count) {
+    let questionTitle = document.createElement("h2")
+    let questionText = document.createTextNode(obj.question)
+
+    questionTitle.appendChild(questionText)
+    quizArea.appendChild(questionTitle)
+
+    for (let i = 0; i < 4; i++) {
+      let mainDiv = document.createElement("div")
+      mainDiv.className = "option"
+
+      let radioInput = document.createElement("input")
+      radioInput.name = "options"
+      radioInput.type = "radio"
+      radioInput.id = `option_${i}`
+      radioInput.dataset.option = obj.options[i]
+
+      theLabel = document.createElement("label")
+      theLabel.htmlFor = `option_${i}`
+
+      theLabelText = document.createTextNode(obj.options[i])
+
+      theLabel.appendChild(theLabelText)
+      mainDiv.appendChild(radioInput)
+      mainDiv.appendChild(theLabel)
+      optionsArea.appendChild(mainDiv)
+    }
+    categoryName(obj.category) 
+}
+}
+
+function checkAnswer(rAnswer, count) {
+  let options = document.getElementsByName("options")
+  let choosenAnswer;
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      choosenAnswer = options[i].dataset.option
+    }
+  }
+  if (rAnswer === choosenAnswer) {
+    rigthAnswers++;
+  }
+}
+
+function handleBullets() {
+  let bulletsSpans = document.querySelectorAll(".bullets .spans span")
+  let arrayOfSpans = Array.from(bulletsSpans)
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.className = "on"
+    }
+  })
+}
+
+
+function showResults(count) {
+  let theResults;
+  if (currentIndex === count) {
+    quizArea.remove()
+    optionsArea.remove()
+    submitButton.remove()
+    bullets.remove()
+    quizInfo.remove()
+
+  
+    theResults = `<span style="font-size:20px;"><span class="perfect">Thank you, <br/></span>All answers are submitted successfully</span><br/><button class="submit-button"><a href="http://127.0.0.1:8000/" style="text-decoration:none;color:white;">Home</button>`
+    
+
+    resultsDiv.innerHTML = theResults
+  }
+}
+
+function countdown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds
+    countdownInterval = setInterval(() => {
+      minutes = parseInt(duration / 60)
+      seconds = parseInt(duration % 60)
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes
+      seconds = seconds < 10 ? `0${seconds}` : seconds
+
+      countdownDiv.style.fontWeight = 'bold'
+
+      if (duration < 60) {
+        countdownDiv.style.color = 'red';
+      }
+
+      countdownDiv.innerHTML = `${minutes}:${seconds}`
+
+      if (--duration < 0) {
+        clearInterval(countdownInterval)
+        // showResults(count)
+        for (let i = 0; i < count - currentIndex + i; i++) {
+          console.log(`Count: ${count}`)
+          console.log(`current Index: ${currentIndex}`)
+          submitButton.click();
+        }
+      }
+    }, 1000)
+  }
+}
+</script>
+{% endblock %}

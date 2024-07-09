@@ -1,0 +1,174 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+{%endblock%}
+{% block content %}
+
+<div class="hall-ticket">
+    <form id="form_sample_1" class="form-horizontal" action="#" method="post">
+        <div id="vUpdatedetails" class="view" style="margin-left:60px;">
+            <div id="div1" class="block">
+                <div class="form-body">
+                    <div id="div2" class="block">
+                        <table class="card" style="border:1px solid; width: 450px; margin-top: 20px; margin-right: 20px;">
+                            <tr>
+                                <td colspan="3" style="border-bottom: 2px solid;">
+                                    <table>
+                                        <tr>
+                                            <td> <img src="{% static 'images/minilogo.png' %}" height="80px" width="80px" alt="Nitte NMAMIT Logo"></td>
+                                            <td>
+                                                <div>
+                                                    <span style="color: blue; font-size: 30px; font-weight: bold;padding-left:73px;">NUCAT 2024</span><br />
+                                                    <span style="color: #000; font-size: 20px; font-weight: bold;padding-left:150px;">Hall Ticket</span><br />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="text-align: center;">
+                                    <span style="color: #000; font-weight: bold;">(Information as furnished by the Candidate)</span><br />
+                                    <span style="margin-right: 10px; font-size: 15px; font-weight: bold; display: inline-block;">Hall Ticket No</span><br />
+                    
+                                    <div style="border: 1px solid; width: 180px; height: 35px; margin-right: 7px; display: inline-block;">
+                                        <span style="color:red;margin-right: 30px; font-size: 15px; font-weight: bold; display: inline-block;">{{application_number}}</span>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div style="border: 1px solid; margin: 10px -335px -90px 0; display: inline-block;"> <img src="{% static 'images/person.jpg' %}" height="100px" width="70px" alt="Person Image"></div>
+                                    <br />
+                                    <div style=" width: 180px; height: 40px; margin: 135px -160px 0 0; display: inline-block;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table style="border: 1px solid; margin: -209px 0 0 10px; width: 415px; height: 155px; font-weight: bold;">
+                                        <tr>
+                                            <td style="padding-left: 10px;">Name</td>
+                                            <td>:</td>
+                                            <td>{{registration.full_name}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px;">Father's name</td>
+                                            <td>:</td>
+                                            <td>{{registration.parent_name}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px;">Mobile No</td>
+                                            <td>:</td>
+                                            <td>{{registration.contact_number}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px;">Category</td>
+                                            <td>:</td>
+                                            <td>General</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px;">Address</td>
+                                            <td>:</td>
+                                            <td>{{registration.address}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table style="border: 1px solid; width: 200px; height: 100px; font-weight: bold;">
+                                        <tr>
+                                            <td style="background: #ddd; text-align: center; border-bottom: 1px solid;">
+                                                <span>Test Date & Time</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <span>08-10-2024</span><br />
+                                                <span>Monday</span><br />
+                                                <span>10.00 AM To 1.00 PM</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table style="margin: -100px 0 0 220px; border: 1px solid; width: 205px; height: 100px; font-weight: bold;">
+                                        <tr>
+                                            <td style="background: #ddd; text-align: center; border-bottom: 1px solid;">
+                                                <span>Test Center</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <span>NMAM Institute of Technology</span><br />
+                                                <span>Nitte, Karkala-574110</span><br />
+                                                <span>Phone No:9999999999</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <br/>
+                                    <span style="margin: 20px 15px -86px 10px; float: left; font-weight: bold;">Signature of the Candidate</span><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <span style="float: right; padding: -10px 10px 10px;">INVIGILATOR</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>     
+    
+    
+    <button class="btn btn-primary" style="margin-left: 100px; margin-top: 30px; margin-bottom: 20px;" onclick="printHallTicket()">Print HallTicket</button>
+    <button class="btn btn-primary" style="margin-left: 100px; margin-top: 30px; margin-bottom: 20px;"><a href="http://127.0.0.1:8000/" style="text-decoration:none;color:white;">Go Home</a></button>
+
+
+    <script>
+         function printHallTicket() {
+    // Define the HTML content for the hall ticket
+    const hallTicketHTML = document.querySelector('.hall-ticket').innerHTML;
+
+    // Open a new window and write the HTML content into it
+    const newWindow = window.open('', '_blank');
+    newWindow.document.open();
+    newWindow.document.write(hallTicketHTML);
+    newWindow.document.close();
+
+    // Use html2pdf library to convert the HTML content to a PDF
+    const opt = {
+        margin:       1,
+        filename:     'hallticket.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().from(newWindow.document.body).set(opt).save();
+}
+window.onload = function() {
+    // Start the timeout countdown when the page loads
+    startTimeout();
+};
+
+function startTimeout() {
+    // Set a timeout for one minute (60 seconds)
+    setTimeout(function() {
+        // After one minute, redirect to logout page or perform logout action
+        // For demonstration purposes, let's just display an alert
+        alert("Your registration is complete you can explore now");
+        // Redirect to logout page or perform logout action here
+        window.location.href = "http://127.0.0.1:8000/"; // Uncomment to redirect to logout page
+    }, 60000); // 60000 milliseconds = 60 seconds = 1 minute
+}
+    </script>
+
+{%endblock%}

@@ -1,0 +1,26 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/About.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="about-section">
+    <div class="inner-container">
+        <h3 style="margin-bottom: 20px;font-weight: bolder;">About NMAMIT</h3>
+        <p class="text">
+          Nitte Mahalinga Adyantaya Memorial Institute of Technology(NMAMIT), Nitte, established in 1986 and recognized by the All India Council for Technical Education, New Delhi, has been a constituent college of Nitte (Deemed to be University), Mangaluru,since June 2022. Rank band 101-150 in the National Institutional Ranking Framework (NIRF) 2023 by Ministry of Education, Government of India, the College has been placed under ‘Platinum’ category for having high industry linkages by the AICTE-CII Survey of Industry-Linked Technical Institutes 2020. NMAMIT, the off-campus centre of Nitte DU located at Nitte village, has active collaborations with several international universities and organizations for faculty and student exchanges, research, internships and placements.
+          
+          NMAMITis located in a vibrant, serene and green campus at Nitte spread over 125 acres and is nestled in the Western Ghats of Southern India on the way to the Kudremukh ranges. The nearest airport is Mangaluru International Airport (45 km). The nearest railway stations are Udupi (40 km) and Mangaluru (50 km). Nitte is 19 km from NH-66 connecting Kochi (Kerala) and Panvel (Mumbai) and 7 km from NH-169 connecting Mangaluru and Solapur (Maharashtra).
+        </p>
+        <div class="explore"><a href="../Components/visionmission.html">
+            <span style="border: 2px solid #2E3192;border-radius: 20%;color: white;background-color: #2E3192; padding:5px 20px 5px 20px;">Vision, Mission & Core values</span></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

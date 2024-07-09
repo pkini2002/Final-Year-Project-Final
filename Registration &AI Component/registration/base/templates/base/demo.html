@@ -1,0 +1,95 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/Application.css' %}" />
+
+<style>
+
+  main{
+    background-image: url("{% static 'images/bg.jpg' %}");
+    background-repeat: repeat-x;
+    animation: slideleft 20000s infinite linear;
+    /* -webkit-animation: slideleft 20000s infinite linear; */
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <!-- this is registration completion page -->
+    <div class="bglayer">
+    <div class="form-container">
+        <form id="hallTicketForm">
+        <div class="shadow-container">
+          
+                     <div id="applicationDetails">
+                        <div class="container horizontal" >
+                            <div class="title-item" style="margin:0px;padding:0px;margin-left:20%;">
+                              <div id="title" style="margin:0px;padding:0px;" class="title-label">Registration Successful </div>
+                            </div>
+                          </div>
+                          <div class="content">
+                            <div class="form-content">
+                            
+                                <div class="input-group">
+                                    <div class="container mt-10 md:mt-10">
+                                  <!-- check mark svg       -->
+                                  <div id="verification">
+                                <div class="animation-ctn" style="margin-top:2em;margin-bottom:2em;">
+                                    <div class="icon icon--order-success svg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="77px" height="77px">  
+                                            <g fill="none" stroke="#22AE73" stroke-width="1"> 
+                                                <circle cx="38.5" cy="38.5" r="36" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                                                <circle id="colored" fill="#22AE73" cx="38.5" cy="38.5" r="36" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                                                <polyline class="st0" stroke="#fff" stroke-width="5" points="21.75,38.9 31.85,49.45 56.1,24.7 " style="stroke-dasharray:50px, 50px; stroke-dashoffset: 100px;"/>   
+                                            </g> 
+                                        </svg>
+                                    </div>
+                                    
+                                </div>
+                            
+                                </div>
+                                <div id="demo">
+                                <div class="text-lg font-semibold text-gray-500 p-10">
+                                <span>Your registration was successful</span><br/>
+                                <span>Your application number is <span style="color:green;font-weight:bolder;"> {{ application_number }} </span></span><br/><br/>
+                                <p style="font-weight:bolder;color:red;">Note: Please note down application number which <br/>is neccessary for E-Hall Ticket Generation<br/> and future Authentication.</p>
+                                </div>
+                                
+                                <button type="button" style="margin:10px;margin-left:30%;" class="next-button" onclick="redirectToHallticket()">Get E-Hall
+                                    ticket</button>
+                                </div>
+                     </div>
+
+                        <script>
+                          function redirectToHallticket() {
+                              window.location.href = '/hallticket/';
+                          }
+                          function redirectToHallticket() {
+                            window.location.href = '/hallticket/';
+                        }
+                      </script>
+                        </div> 
+                    
+                </div>
+                
+            </div>
+          </div>
+         
+        
+        </div>
+      </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+{%endblock%}
+{% block content %}
+
+<body onload="myFunction()">
+    <div class="cube" id="loader">
+      <div class="cube" id="cube">
+          <div class="cube" id="front"></div>
+          <div class="cube" id="back"></div>
+          <div class="cube" id="bottom"></div>
+          <div class="cube" id="top"></div>
+          <div class="cube" id="left"></div>
+          <div class="cube" id="right"></div>
+        </div>
+        <p id="logo">
+          <img src="{% static 'images/nitte-nmamit-logo.png' %}" height="70px" width="500px">
+
+        </p>  
+        
+      </div>
+          <div style="display:none;" id="myDiv" class="animate-bottom">
+            
+              <div class="navbar">
+                  <ul>
+                    <li><a href="{% url 'index' %}"><img src="{% static 'images/nitte-nmamit-logo.png' %}" height="30px" width="250px"></a></li>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'admissions' %}" >Admissions</a></li>
+                    <li><a href="{% url 'c' %}">Courses</a></li>
+                    <li><a href="{% url 'admin' %}">Login</a></li>
+                    <li><a href="http://localhost:5173/Welcomepg" target="_blank">Seat Allotment</a></li>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                  </ul>
+              </div>
+              <main>
+              <ul class='slider'>
+                <li class='item' style="background-image:linear-gradient(rgba(4, 5, 12, 0.7),rgba(4, 5, 12, 0.7)), url('{% static 'images/students.jpg' %}')">
+                  <div class='content'>
+                    <div class='content'>
+                      <h1 class='title'>NUCAT 2024</h1>
+                      <p class='description'> One Test to the Best</p>
+                      <button type="button">Register Now</button>
+                    </div>
+                </li>
+                <li class='item' style="background-image:linear-gradient(rgba(4, 5, 12, 0.7),rgba(4, 5, 12, 0.7)), url('{% static 'images/college.jpg' %}')">
+                  <div class='content'>
+                    <h2 class='title'>WELCOME</h2>
+                    <p class='description'> Follow Your Dreams at NMAMIT </p>
+                   <button type="button">Read More</button></div>
+                 
+                </li>
+                <li class='item' style="background-image:linear-gradient(rgba(4, 5, 12, 0.2),rgba(4, 5, 12, 0.2)),  url('{% static 'images/nrf.jpg' %}')">
+                  <div class='content'>
+                     <button type="button" style="margin-top:30%;">EXPLORE MORE</button>
+                  </div>
+                </li>
+              </ul>
+              <nav class='nav'>
+                <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+                <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+              </nav>
+            </main>
+            
+            <iframe id="reload" src="http://127.0.0.1:8000/carousel" style="width: 100%;height: 70%;z-index: 1000;border: 0;"  scrolling="no"></iframe>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            <iframe src="http://127.0.0.1:8000/videos" style="width: 100%;height: 110%;z-index: 1000;border: 0;" scrolling="no"></iframe>
+            <iframe id="reload" src="http://127.0.0.1:8000/statistic" style="width: 100%;height: 70%;z-index: 1000;border: 0;"  scrolling="no"></iframe>
+            <iframe src="http://127.0.0.1:8000/carouselcard" style="width: 100%;height: 120%; z-index: 1000;border: 0;" scrolling="no"></iframe>
+            <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 61.5%;z-index: 1000;border: 0;"></iframe>
+      </div>
+  
+          <script>
+          var myVar;
+          
+          function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+            
+          }
+          
+          function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+          }
+  
+          const slider1 = document.querySelector(".slider");
+  
+          function activate(e) {
+          const items = document.querySelectorAll(".item");
+          e.target.matches(".next") && slider1.append(items[0]);
+          e.target.matches(".prev") && slider1.prepend(items[items.length - 1]);
+          }
+  
+          document.addEventListener("click", activate, false);
+          const slider = document.querySelector(".slider");
+  
+          function activateNext() {
+          const items = document.querySelectorAll(".item");
+          slider.append(items[0]);
+          }
+  
+          function activatePrev() {
+          const items = document.querySelectorAll(".item");
+          slider.prepend(items[items.length - 1]);
+          }
+  
+          function autoSlide() {
+          activateNext(); // Move to the next slide
+          }
+  
+          // Call autoSlide function every 3 seconds (adjust as needed)
+          let slideInterval = setInterval(autoSlide, 7000);
+          </script>
+       
+  </body>
+
+{%endblock%}

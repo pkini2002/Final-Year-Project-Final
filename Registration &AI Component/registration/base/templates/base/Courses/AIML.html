@@ -1,0 +1,40 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/AIML.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+        <div class="image">
+            <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+        </div> 
+        <h2>Artificial Intelligence and Machine Learning</h2>
+        <p>Bachelor of Technology in Artificial Intelligence & Machine Learning equips students with the skills and knowledge required to analyse, design and control intelligent systems. The main objective of offering this program is developing professionals who are skilled in the area of AI & ML. This program enables students to gain in-depth understanding of fundamental subjects in Computer Science and deals with technologies like image processing, machine learning, natural language processing, neural networks, deep learning, reinforcement learning and big data analytics. This course is designed for both academic and skill based education to create a bright career for the students
+            <br><br> Centre of Excellence in AI and ML is equipped with the latest computers and state of the art amenities facilitating research work and projects for the students and research scholars in addition to regular curricular activities.
+            <br><br></p>
+        <h2>Scope and Opportunities</h2>
+        <p>Machine Learning is one of the fastest-growing fields in the technical sector. Enormous modern Industries require the expertise of skilled Artificial Intelligence professionals to expand the scope of Artificial Intelligence into many sectors, including healthcare, transport, security, gaming, voice recognition technologies, smart systems , finance, promotional network development, customer support, prediction and analytics, search engines, product recommendations, fraud detection and many more. Artificial Intelligence has found a very special place in people’s homes as Smart Home Assistants. Computer Engineers and Scientists are striving relentlessly to impart intelligent behaviour in the machines making them think and respond to real-time situations.
+            <br><br> Up-skilling is a default part of any career. In the IT industry, learning new skills has become mandatory to stay with the competition. In this aspect, Artificial Intelligence (AI) and Machine Learning (ML) are the best choices for an excellent career in a world which is relying on data. The data-driven operations adopted by almost every industry enhances career options of well-trained professionals.
+            <br><br>
+        </p>
+        <p style="font-weight: 700;">Amidst all the commotion that AI may replace redundant job roles with automation and smart devices, we are yet to reach the stage where machines would take over our everyday life. So, if you are an AI & ML aspirant looking for a job in the industry, opportunities are aplenty.</p>
+        <ul style="list-style-type: circle;line-height: 25px;margin-left: 30px;font-weight: 700;margin-bottom: 50px;" class="scope">
+            <li>The students have opportunities to be recruited by reputed industries like Microsoft, Amazon, Google, Nutanix, Oracle,Cisco, Dell Technologies, Accenture,Informatica, Sony India, Juniper, Commvault, Allegion, Avysh, Cohesity, Clover Bay Technologies, Tismo Technologies, Hashedin, VmWare and many more.<br><br></li>
+            <li> Graduates from the AI & ML program can pursue higher education and research at premier national or international universities with a great scope even in the research field.<br><br></li>
+            <li>With a huge reliance on data driven applications, a career in the field of AI & ML can be very promising as Big Data Engineer, Data Scientist, Machine Learning Engineer, Research Scientist, AI Data Analyst, Data warehouse Engineer, Business Intelligence Developer, AI Engineer, Full stack developer, software Architect, Product Manager, Front end Developer, Robotics Scientist, etc.</li>
+        </ul>
+        <a href="{% url 'registration' %}">
+            <button type="button">REGISTER NOW</button>
+        </a>
+    </div>
+    
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    
+    </body>
+
+{% endblock %}

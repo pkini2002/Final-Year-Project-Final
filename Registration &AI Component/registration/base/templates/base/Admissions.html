@@ -1,0 +1,198 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Admissions.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  a{
+    font-size: 15px;}
+  td,th{
+    font-size: 15px;
+  }
+</style>
+{%endblock%}
+{% block content %}
+
+<body onload="myFunction()">
+    <div class="cube" id="loader">
+      <div class="cube" id="cube">
+          <div class="cube" id="front"></div>
+          <div class="cube" id="back"></div>
+          <div class="cube" id="bottom"></div>
+          <div class="cube" id="top"></div>
+          <div class="cube" id="left"></div>
+          <div  class="cube" id="right"></div>
+        </div>
+        <p id="logo">
+          <img src="{% static 'images/nitte-nmamit-logo.png' %}" height="70px" width="500px">
+
+        </p>  
+        
+      </div>
+          <div style="display:none;" id="myDiv" class="animate-bottom">
+            
+              <div class="navbar">
+              <ul>
+                <li><a href="{% url 'index' %}"><img src="{% static 'images/nitte-nmamit-logo.png' %}" height="30px" width="250px"></a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'admissions' %}" class="active">Admissions</a></li>
+                <li><a href="{% url 'c' %}">Courses</a></li>
+                <li><a href="{% url 'admin' %}">Login</a></li>
+                <li><a href="http://localhost:5173/Welcomepg" target="_blank">Seat Allotment</a></li>
+                <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                
+              </ul>
+          </div>
+          
+          <h2 style="background-color: #2E3192;color: #fff;padding: 20px;text-align: center; margin-bottom: 20px;">Admission process for B-TECH 2024</h2>
+          <p style="text-align: center;"><a href="{% url 'registration' %}">Application Open till 14th April.<button type="button" style="margin-left:5px;border:0;background-color: #fff;"><span style="border: 2px solid red;border-radius: 20%;color: white;background-color: red; padding:5px 20px 5px 20px;">Apply Now</span></button></a></p>  
+          <iframe src="http://127.0.0.1:8000/eligibility" style="width: 100%;height: 100%;z-index: 1000;border: 0;"></iframe>       
+          <div class="container" style="display:inline;margin-bottom: 100px;">
+            
+  
+  
+             
+            <table class="table table-hover info" style="width: 90%;margin-left: 5%;margin-bottom: 50px;">
+              <thead>
+                <tr class="info">
+                  <th>Admission Process</th>
+                  <th>Dates</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Application Open</td>
+                  <td>14-04-2024</td>
+                
+                </tr>
+                <tr>
+                  <td>Exam</td>
+                  <td>01-05-2024</td>
+              
+                </tr>
+                <tr>
+                  <td>Result Announcement</td>
+                  <td>10-05-2024</td>
+                  
+                </tr>
+                <tr>
+                  <td>Branch Selection</td>
+                  <td>15-05-2024</td>
+                  
+                </tr>
+                <tr>
+                  <td>Branch Allocation</td>
+                  <td>15-05-2024</td>
+                  
+                </tr>
+                <tr>
+                  <td>Branch Change for non-allocated</td>
+                  <td>15-05-2024</td>
+                  
+                </tr>
+                <tr>
+                  <td>Second Round Branch Allocation</td>
+                  <td>20-05-2024</td>
+                  
+                </tr>
+                <tr>
+                  <td>College starts</td>
+                  <td>01-06-2024</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span><h2 style="margin-bottom: 50px;margin-left: 50px;">NUCAT 2024 Highlights</h2><span>
+          <div class="container" style="display:inline;margin-bottom: 100px;">
+            
+             
+            <table class="table table-hover info" style="width: 90%;margin-left: 5%;margin-bottom: 100px;">
+              <thead>
+                <tr class="info">
+                  <th>Exam Particulars</th>
+                  <th>Exam Details</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Exam Name</td>
+                  <td>NUCAT (Nitte University Common Admission Test)</td>
+                
+                </tr>
+                <tr>
+                  <td>Conducting Body</td>
+                  <td>NITTE University</td>
+              
+                </tr>
+                <tr>
+                  <td>Exam Level</td>
+                  <td>University Level</td>
+                  
+                </tr>
+                <tr>
+                  <td>Mode of Exam</td>
+                  <td>Online</td>
+                  
+                </tr>
+                <tr>
+                  <td>Courses offered through Entrance Exam</td>
+                  <td>BTech</td>
+                  
+                </tr>
+                <tr>
+                  <td>Exam Fees</td>
+                  <td>INR 1000</td>
+                  
+                </tr>
+                <tr>
+                  <td>Exam Duration</td>
+                  <td>2 hours</td>
+                  
+                </tr>
+                <tr>
+                  <td>Total Questions</td>
+                  <td>	
+                    120 Questions<br>
+                    · Physics - 40 questions<br>
+                    · Chemistry - 40 questions<br>
+                    · Mathematics - 40 questions</td>
+                  
+                </tr>
+                <tr>
+                  <td>Marking Scheme</td>
+                  <td>+1 for correct answers
+                   <br>No negative marking for wrong answerss</td>
+                  
+                </tr>
+                <tr>
+                  <td>Contact Details</td>
+                  <td>9513188844 / 7259671555 / 7022807316</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 61.5%;z-index: 1000;border: 0;"></iframe>
+          </div>
+          
+          <script>
+          var myVar;
+          
+          function myFunction() {
+            myVar = setTimeout(showPage, 1000);
+          }
+          
+          function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+          }
+          </script>
+       
+  </body>
+
+{%endblock%}

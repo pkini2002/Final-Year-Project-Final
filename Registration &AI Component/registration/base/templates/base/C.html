@@ -1,0 +1,288 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/C.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+  
+<h1 style="text-align: center;font-weight: 400;">Explore Courses</h1>
+    <section class="articles">
+      
+        <article>
+          <div class="article-wrapper">
+            <figure>
+              <img src="{% static 'images/AIDS.png' %}" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>Artificial Intelligence & Data Science</h2>
+             
+              <a href="{% url 'AIDS' %}" class="read-more" target="_blank">
+                Read more <span class="sr-only"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img src="{% static 'images/AIML.png' %}" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>Artificial Intelligence & Machine Learning</h2>
+             
+              <a href="{% url 'AIML' %}"  target="_blank">
+                Read more <span class="sr-only">about </span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+              <img src="{% static 'images/Biotechnology Engineering.png' %}" alt="" />
+            </figure>
+            <div class="article-body">
+              <h2>Biotechnology Engineering</h2>
+             
+              <a href="{% url 'BIO' %}"  target="_blank">
+                Read more <span class="sr-only">about </span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img src="{% static 'images/Civil Engineering.png' %}" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Civil Engineering</h2>
+                
+                <a href="{% url 'Civil' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img src="{% static 'images/Computer & Communication Engineering.png' %}" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Computer & Communication Engineering</h2>
+                
+                <a href="{% url 'CCE' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img src="{% static 'images/Computer Science & Engineering.png' %}" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Computer Science & Engineering</h2>
+                
+                <a href="{% url 'CSE' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img src="{% static 'images/Computer Science (Cyber Security).png' %}" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Computer Science
+                    (Cyber Security)</h2>
+                
+                <a href="{% url 'CSC' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img src="{% static 'images/Computer Science (Full Stack Development Specialization).png' %}" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Computer Science
+                    (Full Stack Development Specialization)</h2>
+                
+                <a href="{% url 'CSF' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/Electronics & Communication Engineering.png' %}"
+                alt="" />
+              </figure>
+
+              <div class="article-body">
+                <h2>Electronics & Communication Engineering</h2>
+                
+                <a href="{% url 'EC' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/EC.png' %}"
+                alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Electronics
+                    (VLSI Design & Technology)</h2>
+                
+                <a href="{% url 'EV' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/Electrical & Electronics Engineering.png' %}"
+                alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Electrical & Electronics Engineering</h2>
+                
+                <a href="{% url 'EE' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/Information Science & Engineering.png' %}"
+                alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Information Science & Engineering</h2>
+                
+                <a href="{% url 'IS' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/Mechanical Engineering.png' %}"
+                alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Mechanical Engineering</h2>
+                
+                <a href="{% url 'ME' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+      
+            <div class="article-wrapper">
+              <figure>
+                <img 
+                src="{% static 'images/Robotics & Artificial Intelligence.png' %}"
+                alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>Robotics & Artificial Intelligence</h2>
+               
+                <a href="{% url 'RA' %}"  target="_blank">
+                  Read more <span class="sr-only">about </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+         
+      </section> 
+</body>
+
+
+{% endblock %}

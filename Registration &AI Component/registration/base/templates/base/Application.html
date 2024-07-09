@@ -1,0 +1,413 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/Application.css' %}" />
+
+<style>
+
+  main{
+    background-image: url("{% static 'images/bg.jpg' %}");
+    background-repeat: repeat-x;
+    animation: slideleft 20000s infinite linear;
+    /* -webkit-animation: slideleft 20000s infinite linear; */
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <!-- this is registration completion page -->
+    <div class="bglayer">
+    <div class="form-container">
+        <form id="hallTicketForm">
+        <div class="shadow-container">
+          
+                     <div id="applicationDetails"></div>
+
+                        <script>
+                          function redirectToHallticket() {
+                              window.location.href = '/hallticket/';
+                          }
+                          function redirectToRegister() {
+                            window.location.href = '/registration/';
+                        }
+                      </script>
+                        </div> 
+                    
+                </div>
+                
+            </div>
+          </div>
+         
+        
+        </div>
+      </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.6.0/dist/web3.min.js"></script>
+  <!-- Include Web3.js from CDN -->
+  <script>
+  let web3;
+    if (typeof window.ethereum !== 'undefined') {
+      web3 = new Web3(window.ethereum);
+      window.ethereum.enable().then(function(accounts) {
+          console.log(accounts);
+      });
+    } else {
+      console.error('MetaMask not detected');
+    }
+
+    // Contract ABI (ApplicationRegistry)
+    const contractABI = [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "appId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "cid",
+          "type": "string"
+        }
+      ],
+      "name": "ApplicationCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "applications",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "appId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "cid",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "applicationsByAppId",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "appId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "cid",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "applicationsByCid",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "appId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "cid",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "nextId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_appId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_cid",
+          "type": "string"
+        }
+      ],
+      "name": "createApplication",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_appId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "getApplicationByAppIdAndName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "getAllApplications",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    }
+  ];
+
+    const contractAddress = '0x884331fEd89f327d78Dc98B073e4d97A4b44fB4F';
+
+    const contract = new web3.eth.Contract(contractABI, contractAddress);
+    console.log(contract);
+    async function getApplication() {
+      const name = '{{ full_name }}';
+      const appId = '{{ roll_number }}';
+      console.log(name);
+      console.log(appId);
+      const applicationNumber = '{{ application_number }}';
+      try {
+          const accounts = await web3.eth.getAccounts();
+          const app = await contract.methods.getApplicationByAppIdAndName(appId, name).call({ from: accounts[0] });
+          const cidInput='{{ cid }}';
+          if (app[0] !== "" && cidInput==app[2]) {
+              const cid = app[2];
+              const url = 'https://gateway.pinata.cloud/ipfs/' + cid;
+              console.log(url);
+              document.getElementById('applicationDetails').innerHTML = `
+              <div class="container horizontal" style="margin-left:10%;">
+                <div class="title-item" style="margin:0px;padding:0px;margin-right:50px;">
+                  <div id="title" class="title-label" ">Document Verification Successful</div>
+                </div>
+              </div>
+              <div class="content">
+                <div class="form-content">
+                
+                    <div class="input-group">
+                        <div class="container mt-10 md:mt-10">
+                      <!-- check mark svg       -->
+                      <div id="verification">
+                        <div class="animation-ctn" style="margin-top:2em;margin-bottom:2em;">
+                        <div class="icon icon--order-success svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="77px" height="77px">  
+                                <g fill="none" stroke="#22AE73" stroke-width="1"> 
+                                    <circle cx="38.5" cy="38.5" r="36" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                                    <circle id="colored" fill="#22AE73" cx="38.5" cy="38.5" r="36" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle>
+                                    <polyline class="st0" stroke="#fff" stroke-width="5" points="21.75,38.9 31.85,49.45 56.1,24.7 " style="stroke-dasharray:50px, 50px; stroke-dashoffset: 100px;"/>   
+                                </g> 
+                            </svg>
+                        </div>
+                        
+                    </div>
+                  <div class="mt-3 text-xl font-semibold uppercase text-blue-500" style="text-align: center;">
+                      Congratulations,<span style="font-weight:bolder;color:green;"> ${name}</span>!<br/>
+                      <span>Your document verification was successful.</span>
+                      
+                  </div>
+                
+                    <div>
+                    
+                    <button type="button" style="margin-left:40%;margin-top:20px" class="next-button" onclick="bioauthen()" id="proceed">next</button>
+                    </div>
+                  </div>
+                    <div id="photos" style="display:none;">
+                      <img src="{% static 'images/biometric.gif' %}" style="margin-left:40%;" height=80 width=100 alt="card-1" />
+                    <div class="text-lg font-semibold text-gray-500 p-10">
+                        <span>Click on <span style="font-weight:bolder;">take photo</span> to capture photos.</span><br/>
+                        <p>We take 10 photo prompts so webcam will open 10 times.</p><br/>
+                        <span style="font-weight:bolder;color:red;"> Note: This step is necessary for Biometric Authentication.<br/>Please ensure good lighting.</p>
+                       
+                    </div>
+                    <button type="button" style="margin:10px;margin-left:35%;" class="next-button" onclick="capture()" style="display:none;margin-left: 20px;" id="take-photo-button">Take Photo</button>
+                    </div>
+                    
+              `;
+          } else {
+              document.getElementById('applicationDetails').innerHTML = ` 
+              
+              </div>
+              <div class="mt-3 text-xl font-semibold uppercase text-blue-500" style="text-align: left;">
+                Sorry, <span style="font-size: 120%; font-weight: bold; color: blue;">${name}!</span>
+
+            </div>
+            <br/><br/>
+            <div class="text-lg font-semibold text-gray-500 p-10">
+                <span>Your document verification was <span style="color:red;font-weight: bold">unsuccessful</span>.</span><br/><br/>
+                <p>Please try registering again...</p>
+                <div id="countdown" style="color:green;font-weight:bold;font-size:150%;"></div>
+            </div>            
+            `;
+            startCountdown();
+            setTimeout(redirectToRegister, 12000);
+          }
+      } catch (error) {
+          console.error("Error retrieving application:", error);
+          document.getElementById('applicationDetails').innerHTML =` <p>Verification failed: Application not found</p>`;
+      }
+    }
+    function startCountdown() {
+      var timeLeft = 10; // 5 seconds
+      var countdownElement = document.getElementById('countdown');
+  
+      var timerId = setInterval(function() {
+          countdownElement.textContent = 'Redirecting in ' + timeLeft + ' seconds';
+          timeLeft--;
+  
+          if (timeLeft === 0) {
+              clearInterval(timerId);
+              redirectToRegister(); // Redirect after countdown
+          }
+      }, 1000); // Update every second (1000 milliseconds)
+  }
+  getApplication(); // Call the function on page load
+  function redirectToHallticket() {
+                            window.location.href = '/hallticket/';
+                        }
+
+  function capture() {
+             window.location.href = "http://127.0.0.1:8000/capture-photos/";
+        }
+
+  function demo() {
+                window.location.href = "http://127.0.0.1:8000/view-demo/";
+        }
+  function bioauthen() {
+               var verif= document.getElementById('verification');
+               document.getElementById('title').style.display="none";
+               verif.style.display="none";
+               document.getElementById("photos").style.display="block";
+        }
+  </script>
+  
+{% endblock %}

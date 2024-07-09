@@ -1,0 +1,28 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/CSC.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Computer Science (Cyber Security)</h2>
+            <p>Cyber Security provides an unrivalled opportunity to work in a dynamic atmosphere while being well-compensated. It is a good career opportunity for students and professionals who are inclined towards pursuing a career in technology and cybersecurity.Cyber Security has become business-critical for every organization. The U.S. Bureau of Labor Statistics estimates that the employment of information security analysts will grow 31 percent from 2019 to 2029.A lack of skilled professionals continues to haunt India that needs about a million cybersecurity professionals, according to an estimate by the Data Security Council of India.
+                <br><br>
+                This BTech course,Computer Science and Engineering (Cyber Security),offered by NMAMIT, Nitte includes the blend of core and advanced Computer Science and Engineering subjects with specialized Cyber Security subjects, namely, Cyber Security and Forensics, Cloud security and IOT Security, Ethical Hacking and Network Defense, Security Analytics, Analysis of Firewall & UTM architecture, Malware Analysis and Detection, Security and Resilience analysis, Applying Machine Learning and Artificial Intelligence on Cyber security, Penetration testing & incident response and opportunity to learn Advanced topics in cyber security and Forensics.
+                <br><br>
+                The students shall gain knowledge in both core Computer Science and Engineering as well as a good practical knowledge on Cyber Security. Hence the students can choose their career as a general software engineer or as a Cyber Security professional. With a certification in Cyber Security &Analysis one can land on their dream job and start working with the top organizations of the world. Companies specializing in IT or cybersecurityare constantly hiring skilled Cyber Security professionals. Numerous public and private companies are in urgent need for these professionals for their IT or cybersecurity departments.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

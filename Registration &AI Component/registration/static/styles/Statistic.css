@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:ital,wght@0,200;0,300;0,400;1,100&display=swap'); 
+body{
+    padding-top: 50px;
+}
+
+.statistic-section {
+ background-image: url('../images/bg.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ justify-content: center;
+ align-items: center;
+}
+
+.bg-layer{
+ padding: 50px;
+ justify-content: center;
+ align-items: center;
+ background: rgba(0,0,0,0.6);
+}
+
+.count-title {
+font-size: 50px;
+font-weight: normal;
+margin-top: 10px;
+margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
+color: #fff;
+}
+
+.stats-text {
+font-size: 15px;
+font-weight: normal;
+margin-top: 15px;
+margin-bottom: 0;
+text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h3{
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-weight: 700;
+}
+
+h2{
+font-size: 50px;
+font-weight: normal;
+margin-top: 10px;
+margin-bottom: 0;
+text-align: center;
+font-weight: bold;
+color: #fff;
+}
+
+.stats-line-black {
+margin: 12px auto 0;
+width: 55px;
+height: 2px;
+background-color: #fff;
+}
+
+.stats-icon {
+  font-size: 35px;
+  margin: 0 auto;
+float: none;
+display: table;
+color: #fff;
+}
+
+@media (max-width: 992px) {
+.counter {
+    margin-bottom: 40px;
+}
+}

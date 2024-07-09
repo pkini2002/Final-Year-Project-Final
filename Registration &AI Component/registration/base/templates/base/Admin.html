@@ -1,0 +1,68 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Admin.css' %}" />
+
+<style>
+  *{
+    overflow-x: hidden;
+  }
+    
+    main{
+      background-image: url("{% static 'images/bg.jpg' %}");
+      background-repeat: repeat-x;
+      animation: slideleft 20000s infinite linear;
+      /* -webkit-animation: slideleft 20000s infinite linear; */
+      background-size: cover;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+  }  
+
+  .container {
+    padding-top:200px;
+    width: 20%;
+    max-width: 200px;
+  }
+  .card{
+    width:30%;
+  }
+  </style>
+{%endblock%}
+{% block content %}
+
+<body>
+    <main>
+    <div class="bglayer">
+    <div class="container" style="margin-left:35%;opacity:0.8;">
+        <div class="card">
+            <h2 style="padding:20px;font-size:27px;font-weight:bolder;color:#082ab4;">STUDENT LOGIN</h2>
+            {% if error_message %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="myAlert">
+              {{ error_message }}
+              <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+            </div>
+            {% endif %}
+            <form method="post" id="loginForm" style="justify-content:center;align-items:center;">
+                {% csrf_token %}
+                <input type="text" id="username" name="username" placeholder="Enter your full name in Caps" value="" style="margin-bottom:10px;" required>
+                <input type="password" id="password" name="password" placeholder="Password (Application Number)" value="" style="margin-bottom:10px;" required>
+                <button style="margin:30px;width:220px;align-items:center;" type="submit">Login</button>
+                <span style="color:purple;font-size:10px;font-weight:bolder;text-align:center;padding:10px">Did not register?<a href="{% url 'registration' %}" style="color:purple;">Register Now</a></span>
+            </form>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+
+<script>
+  function closeAlert() {
+      var alertElement = document.getElementById('myAlert');
+      alertElement.classList.remove('show');
+    }
+  </script>
+
+{%endblock%}

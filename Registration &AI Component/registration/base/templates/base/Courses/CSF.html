@@ -1,0 +1,34 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/Courses/CSF.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+<body>
+
+    <div class="container">
+       <div class="image">
+      <img src="{% static 'images/bannerforcourse.jpg' %}" style="width:100%;height:330px;"/>  
+    </div> 
+            <h2>Computer Science(Full Stack Development Specialization)</h2>
+            <p>
+                NMAMIT has collaborated with upGrad Campus to empower its B.Tech. students with Full Stack Development programs.
+                Our vision is to enable students with value-added Skill Enhancement programs for Employment and Career Progression.
+                And our mission is to evolve continually as a center of excellence in quality education and collaborate with industries to enhance research in emerging areas.
+                <br><br></p>
+                <h3 style="font-weight: bolder;margin:0 30px 50px 30px;">About program:
+                Full Stack Development</h3>
+                <p>
+                Our B.Tech. CSE with specialization in Full Stack Development program is a comprehensive course that covers a range of topics including algorithms, data structures, competitive programming, web development.
+                <br><br>
+                The program is spread over 48 months, consisting of 8 semesters. It follows a blended learning approach that includes live sessions, offline classes, online classes, self-paced learning, and hands-on projects. The program is delivered by industry experts with extensive experience in Full Stack Development.</p>
+      </div> <a href="{% url 'registration' %}">
+      <button type="button">REGISTER NOW</button></a>
+    </div>
+    <iframe src="http://127.0.0.1:8000/footer" style="width: 100%;height: 435px;z-index: 1000;border: 0;" scrolling="no"></iframe>
+    </body>
+
+{% endblock %}

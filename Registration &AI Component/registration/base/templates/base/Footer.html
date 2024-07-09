@@ -1,0 +1,101 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<link rel="stylesheet" href="{% static 'styles/Footer.css' %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+      
+<div class="pg-footer">
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-content-column">
+          <div class="footer-menu">
+            <h2 class="footer-menu-name"> About Us</h2>
+            <ul id="menu-get-started" class="footer-menu-list">
+              <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                <a href="{% url 'about' %}" target="_blank">About NMAMIT</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-product">
+                <a href="{% url 'visionmission' %}" target="_blank">Vision,mission and core values</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+       
+        <div class="footer-content-column">
+          <div class="footer-menu">
+            <h2 class="footer-menu-name"> Quick Links</h2>
+            <ul id="menu-quick-links" class="footer-menu-list">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" rel="noopener noreferrer" href="{% url 'admissions' %}">Admission</a>
+              </li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" rel="noopener noreferrer" href="#">login</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="{% url 'c' %}" target="_blank">courses</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="{% url 'aboutus' %}" target="_blank">Aboutus</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type_archive menu-item-object-customer">
+                <a href="https://nitte.edu.in/fee/BTECH.pdf">Fee structure</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="{% url 'index' %}" target="_blank">Explore</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-content-column">
+          <div class="footer-menu">
+            <h2 class="footer-menu-name"> Social Media</h2>
+            <ul id="menu-company" class="footer-menu-list">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="https://www.instagram.com/nmamit_nitte/" target="_blank">Instagram</a>
+              </li>
+              <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                <a href="https://www.youtube.com/c/NMAMInstituteofTechnology" target="_blank">Youtube</a>
+              </li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <a href="https://twitter.com/nmamitnitte" target="_blank">Twitter</a>
+              </li>
+            </ul>
+          </div>
+         
+        </div>
+        <div class="footer-content-column">
+          <div class="footer-call-to-action">
+            <h2 class="footer-call-to-action-title"> Contact us</h2>
+            <p class="footer-call-to-action-description">NMAM Institute of Technology
+              Nitte, Karkala Taluk,
+              Udupi - 574110
+              Karnataka, India</p>
+            <a class="footer-call-to-action-button button" href="tel:+918258281039" target="_self"> Get in Touch </a>
+          </div>
+          <div class="footer-call-to-action">
+            <h2 class="footer-call-to-action-title"> You can Call Us</h2>
+            <p class="footer-call-to-action-link-wrapper"> <a class="footer-call-to-action-link" href="tel:+918258281039" target="_self"> +918258281039 </a></p>
+          </div>
+        </div>
+        
+          
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="footer-copyright-wrapper">
+          <p class="footer-copyright-text">
+            <a class="footer-copyright-link" href="#" target="_self"> ©2024. | Designed By: Team 3 | All rights reserved. </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+{% endblock %}

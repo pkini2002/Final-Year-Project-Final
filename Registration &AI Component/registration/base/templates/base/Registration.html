@@ -1,0 +1,209 @@
+{% extends 'main.html' %} 
+{% load static %} 
+{% block styles %}
+
+<link rel="stylesheet" href="{% static 'styles/Registration.css' %}" />
+
+<style>
+
+main{
+    background-image: url("{% static 'images/bg.jpg' %}");
+    background-repeat: repeat-x;
+    animation: slideleft 20000s infinite linear;
+    /* -webkit-animation: slideleft 20000s infinite linear; */
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+}
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="bglayer">
+       <!-- Display error message if it exists -->
+       {% if error_message %}
+       <div class="alert alert-danger alert-dismissible fade show" role="alert" id="myAlert">
+         {{ error_message }}
+         <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+       </div>
+       {% endif %}
+       
+        
+            <div class="form-container">
+              <div class="shadow-container" style="width:800px;">
+                <div class="container horizontal">
+                  <div class="title-item">
+                    <div class="title-label" style="font-size: 30px;position: relative;right: 35px;">Register</div>
+                  </div>
+                </div>
+                <div class="content">
+                  <!-- Your form content here -->
+  <form method="post" id="registration-form" enctype="multipart/form-data">
+               {% csrf_token %}
+                  <div class="form-content">
+                    <div class="input-group">
+                      <label for="name">Full name</label>
+                      <input type="text" id="name" name="name" placeholder="Enter applicant's name as per 10th marks card">
+                    </div>
+                    <div class="input-group">
+                      <label for="email">Email Id</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email id" required>
+                    </div>
+                    <div class="input-group">
+                      <label for="contactno">Contact number</label>
+                      <input type="tel" id="contactno" name="contactno" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="parent-name">Parent's name</label>
+                        <input type="text" id="parent-name" name="parent-name" placeholder="Enter parent's name" required>
+                      </div>
+                      <div class="input-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                          <label class="radio-label"><input type="radio" name="gender" value="male" style="position: relative; left: -5px;">Male</label>
+                          <label class="radio-label"><input type="radio" name="gender" value="female" style="position: relative; left: -5px;">Female</label>
+                          <label class="radio-label"><input type="radio" name="gender" value="others" style="position: relative; left: -5px;">Others</label>
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label for="date-of-birth">Date of Birth</label>
+                        <input type="date" id="date-of-birth" name="date-of-birth" placeholder="Enter date of birth" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" id="nationality" name="nationality" placeholder="Enter your nationality" required>
+                      </div>
+                      <div class="input-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                      </div>
+                   
+                    <div class="input-group">
+                        <label for="board-name" class="input-label">Board Name</label>
+                        <div class="input-field">
+                          <input type="text" id="board-name" name="board" placeholder="Enter your 10th Board Name" style="position: relative;top: 30px;right: 100px;" class="text-input" required>
+                        </div>
+                      </div>
+                      
+                    <div class="input-group">
+                        <label for="percentage-cgpa" class="input-label" style="position: relative;top: 30px;">Percentage/CGPA</label>
+                        <div class="input-field">
+                        <input type="text" id="percentage-cgpa" name="per" placeholder="Enter your 10th percentage/CGPA" style="position: relative; top: 55px; right: 140px;" class="text-input" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="roll-no" class="input-label" style="position: relative; top: 30px;">10th Roll No</label>
+                      <div class="input-field">
+                        <input type="text" style="position: relative; top: 60px; right: 98px;" placeholder="Enter your 10th Roll Number" name="rollno" class="text-input" required>
+                      </div>
+                    </div>
+
+                       <div class="input-group" style="position: relative; top: 40px;">
+                        <label for="upload-marks-card" 
+                        style="position: relative;top: 20px;"
+                        class="input-label">Upload 10th marks card</label>
+                        <div class="input-field">
+                        <input type="file" name="marks-card" style="position: relative;top: 25px;" id="fileInput" name="marksdoc" class="file-input" required>
+                        
+                        </div>
+                        
+                        <Button type="button" style="display:flex;background-color: blue;
+                        border: none;
+                        border-radius: 25px;
+                        color: white;
+                        padding: 10px 10px;
+                        margin-top: 31px;
+                        margin-right:10px;
+                        text-align: center;
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: bold;
+                        
+                        cursor: pointer;" class="send-button" id="send-button" onclick="uploadFile()">Upload</Button><br/>
+                        <span id="note" style="font-size:14px;font-weight:bolder;margin-top:10px;color:red;"><p><strong>*Note: </strong> Once the file is uploaded, changes cannot be <br/>made.Please ensure you upload the correct document.</p></span>
+
+                        <span id="note1" style="display:none;font-size:14px;font-weight:bolder;margin-top:30px;color:green;">File uploaded successfully.</span>
+                    
+                    <div class="input-group">
+                      <div class="input-field">
+                        <input type="text" id="cid" style="display:none;position: relative; top: 60px; right: 62px;" placeholder="" name="cid" class="text-input">
+                        
+                      </div>
+                    </div>
+                    
+                </div>
+                </div>
+                <div class="button-container"></div>
+                <button type="submit" class="next-button"  style="position: relative;right: 45px; top: 5px;">Continue</button>
+                </div>
+            </div>
+            </div>
+        
+    </div>
+</main>
+</form>
+<script>
+  function closeAlert() {
+    // Find the alert element
+    var alertElement = document.getElementById('myAlert');
+
+    // Remove the 'show' class to hide the alert
+    alertElement.classList.remove('show');
+  }
+  var cid='';
+function uploadFile() {
+
+const fileInput = document.getElementById('fileInput');
+const file = fileInput.files[0];
+
+const formData = new FormData();
+formData.append('file', file);
+
+const apiKey = '717c579e3fb60f7e05c4'; // Replace with your Pinata API Key
+const apiSecret = 'cdb7a99f9d3e60f7d194768544bb5ec8fa3eff3aa782dcb6eae1dae4144b2845'; // Replace with your Pinata API Secret
+
+const requestOptions = {
+    method: 'POST',
+    headers: {
+        'pinata_api_key': apiKey,
+        'pinata_secret_api_key': apiSecret,
+    },
+    body: formData,
+};
+
+fetch('https://api.pinata.cloud/pinning/pinFileToIPFS', requestOptions)
+    .then(response => response.json())
+    .then(data => {
+        console.log('Upload successful:', data);
+        cid = data.IpfsHash;
+        console.log(cid);
+        const url = 'https://gateway.pinata.cloud/ipfs/' + cid; // Constructing the URL
+        alert('File uploaded successfully!');
+        document.getElementById('fileInput').disabled = true;
+        var button=document.querySelector('.send-button');
+        button.style.display = 'none';
+        document.getElementById('note').style.display="none";
+        document.getElementById('note1').style.display="block";
+        var CID=document.getElementById("cid");
+        CID.value = cid;
+       console.log(CID.value);
+       
+    })
+    .catch(error => {
+        console.error('Error uploading file:', error);
+        alert( 'Error uploading file: ' + error.message);
+    });
+   
+}
+</script>
+
+{% endblock %}

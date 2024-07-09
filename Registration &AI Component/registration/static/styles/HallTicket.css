@@ -1,0 +1,125 @@
+.bglayer {
+    background: rgba(9, 7, 18, 0.7);
+    min-height: 100vh;
+	
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Container Styles */
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width:110%;
+    margin-left: 0;
+  }
+  .form-content {
+    width: 800px; /* Adjust this width as needed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:0 20px;
+  }
+  .shadow-container {
+    width: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    opacity: 0.8;
+  }
+  
+  .container.horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .title-item {
+    margin-left:0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #082ab4;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .radio-label {
+    display: flex;
+    padding: 0%;
+    font-weight: normal;
+  }
+
+  .content {
+    margin-top: 0px;
+  }
+  
+  .form-content {
+    margin-bottom: 10px;
+  }
+  
+  .input-group {
+    margin-bottom: 0px;
+  }
+  
+
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 90%;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .next-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid #082ab4;
+    background-color: #fff;
+    cursor: pointer;
+    color: #082ab4;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .next-button:hover {
+    background-color: #082ab4;
+    color: #fff;
+  }
+        .Mystar
+        {
+            color: Red;
+        }
+        .card
+        {
+            box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2);
+            width: 650px;
+            margin: auto;
+            text-align: left;
+            border: 2px solid;
+        }
+    
+     
+        .title
+        {
+            color: grey;
+            font-size: 18px;
+        }

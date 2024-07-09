@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes slideleft {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 90000%;
+    }
+}
+
+@-webkit-keyframes slideleft {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 90000%;
+    }
+}
