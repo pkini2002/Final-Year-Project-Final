@@ -53,7 +53,7 @@ The present trend is to digitize the systems and the admission process in academ
 
 ![image](https://github.com/SammithaS/Smart-student-admission-system-complete-/assets/121117205/caa97675-ab92-40d0-b3f4-6efb108d5159)
 
-![image](https://github.com/SammithaS/Smart-student-admission-system-complete-/assets/121117205/e3e6f491-0108-4c0b-ad69-35f9bf49f4a1)
+![image](https://github.com/pkini2002/Strivers-DSA-Sheet-Challenge-2023/assets/84091455/e012896a-6fd1-4e80-b2e9-63977029930e)
 
 
 **AI component - Biometric Face Authentication**
