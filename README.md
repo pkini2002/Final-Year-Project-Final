@@ -78,7 +78,20 @@ The present trend is to digitize the systems and the admission process in academ
 
 ## Project Team
 
-
+<table>
+  <tr>
+    <td><img src = "https://github.com/pkini2002/Final-Year-Project-Final/assets/84091455/6cf540f0-ecca-46c5-bbc2-afc6967f16c6" width="50px"></td>
+    <td><img src = "https://github.com/pkini2002/Final-Year-Project-Final/assets/84091455/36a1bfc2-b3ee-488c-9e5e-5d23050d202d" width="50px"></td>
+    <td><img src = "https://github.com/pkini2002/Final-Year-Project-Final/assets/84091455/102ff198-9d7f-496b-bb5a-8c9405395149" width="50px"></td>
+    <td><img src = "https://github.com/pkini2002/Final-Year-Project-Final/assets/84091455/e5558ed5-5877-41e2-92f3-120e41a33c32" width="50px"></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Nischitha2109">Nischitha Shetty</a></td>
+    <td><a href="https://github.com/pkini2002">Prathiksha Kini</td>
+    <td><a href="https://github.com/SammithaS">Sammitha S Poojary</td>
+    <td><a href="https://github.com/SahilPhal">Sahil Dilip Phal</td>
+  </tr>
+</table>
 
 
 
